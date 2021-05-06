@@ -1,3 +1,6 @@
-<view>首页
+<!-- <view>首页
   <text class="iconfont icon-shoucang1"></text>
+</view> -->
+<view class="pyg_index">
+  <SearchInput></SearchInput>
 </view>
