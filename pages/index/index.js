@@ -6,7 +6,8 @@ Page({
   data: {
     //轮播图数组
     swiperList: [],
-    catesList: []
+    catesList: [],
+    floorList:[]
   },
 
   onLoad: function (options) {
@@ -24,6 +25,7 @@ Page({
 
     this.getSwiperList();
     this.getCateList();
+    this.getFloorList();
   },
   // 获取轮播图数据
   getSwiperList() {
@@ -46,5 +48,16 @@ Page({
         catesList: result.data.message
       })
     })
-  }
+  },
+  // 获取 楼层数据
+  getFloorList() {
+    request({
+      url: "https://api-hmugo-web.itheima.net/api/public/v1/home/floordata"
+    }).then(result => {
+      // console.log(result);
+      this.setData({
+        floorList: result.data.message
+      })
+    })
+  },
 })
