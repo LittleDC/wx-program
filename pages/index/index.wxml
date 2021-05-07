@@ -2,17 +2,27 @@
   <text class="iconfont icon-shoucang1"></text>
 </view> -->
 <view class="pyg_index">
+  <!-- searchBar begin -->
   <SearchInput></SearchInput>
+  <!-- searchBar end -->
+
+  <!-- swiper begin -->
   <view class="index_swiper">
     <swiper autoplay indicator-dots circular>
-      <swiper-item
-      wx:for="{{swiperList}}"
-      wx:key="goods_id"
-      >
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
         <navigator>
           <image mode="widthFix" src="{{item.image_src}}"></image>
         </navigator>
       </swiper-item>
     </swiper>
   </view>
+  <!-- swiper end -->
+
+  <!-- nav begin -->
+  <view class="index_cate">
+    <navigator wx:for="{{catesList}}" wx:key="name">
+      <image mode="widthFix" src="{{item.image_src}}"></image>
+    </navigator>
+  </view>
+  <!-- nav end -->
 </view>
