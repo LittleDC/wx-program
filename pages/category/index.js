@@ -8,7 +8,9 @@ Page({
     //右侧商品数据
     rightContent: [],
     //被点击的左侧菜单
-    currentIndex: 0
+    currentIndex: 0,
+    //右侧内容滚动条距离顶部距离
+    scollTop: 0,
   },
 
   //接口的返回数据
@@ -41,7 +43,7 @@ Page({
   //获取分类数据
   getCates(index) {
     request({
-      url: "https://api-hmugo-web.itheima.net/api/public/v1/categories"
+      url: "/categories"
     }).then(res => {
       // console.log(res);
       this.Cates = res.data.message
@@ -68,7 +70,8 @@ Page({
     let rightContent = this.Cates[index].children
     this.setData({
       currentIndex: index,
-      rightContent
+      rightContent,
+      scrollTop: 0
     })
     // this.getCates(index)
   }
