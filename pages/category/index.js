@@ -1,6 +1,7 @@
 import {
   request
 } from "../../request/index.js"
+import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
   data: {
     //左侧菜单数据
@@ -41,23 +42,39 @@ Page({
   },
 
   //获取分类数据
-  getCates(index) {
-    request({
+  async getCates(index) {
+    // request({
+    //   url: "/categories"
+    // }).then(res => {
+    //   // console.log(res);
+    //   this.Cates = res.data.message
+    //   wx.setStorageSync('cates', {
+    //     time: Date.now(),
+    //     data: this.Cates
+    //   })
+    //   let leftMenuList = this.Cates.map(v => v.cat_name)
+    //   let rightContent = this.Cates[index].children
+    //   this.setData({
+    //     // leftMenuList:leftMenuList
+    //     leftMenuList,
+    //     rightContent
+    //   })
+    // })
+
+    const res = await request({
       url: "/categories"
-    }).then(res => {
-      // console.log(res);
-      this.Cates = res.data.message
-      wx.setStorageSync('cates', {
-        time: Date.now(),
-        data: this.Cates
-      })
-      let leftMenuList = this.Cates.map(v => v.cat_name)
-      let rightContent = this.Cates[index].children
-      this.setData({
-        // leftMenuList:leftMenuList
-        leftMenuList,
-        rightContent
-      })
+    })
+    this.Cates = res.data.message
+    wx.setStorageSync('cates', {
+      time: Date.now(),
+      data: this.Cates
+    })
+    let leftMenuList = this.Cates.map(v => v.cat_name)
+    let rightContent = this.Cates[index].children
+    this.setData({
+      // leftMenuList:leftMenuList
+      leftMenuList,
+      rightContent
     })
   },
 
