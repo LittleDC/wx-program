@@ -15,23 +15,35 @@ Page({
   Cates: [],
 
   onLoad: function (options) {
-    this.getCates();
+    this.getCates(0);
   },
 
   //获取分类数据
-  getCates() {
+  getCates(index) {
     request({
       url: "https://api-hmugo-web.itheima.net/api/public/v1/categories"
     }).then(res => {
       // console.log(res);
       this.Cates = res.data.message
       let leftMenuList = this.Cates.map(v => v.cat_name)
-      let rightContent = this.Cates[0].children
+      let rightContent = this.Cates[index].children
       this.setData({
         // leftMenuList:leftMenuList
         leftMenuList,
         rightContent
       })
     })
+  },
+
+  //左侧菜单的点击事件
+  handleItemTap(e){
+    // console.log(e);
+    const {index}=e.currentTarget.dataset
+    let rightContent = this.Cates[index].children
+    this.setData({
+      currentIndex:index,
+      rightContent
+    })
+    // this.getCates(index)
   }
 })
