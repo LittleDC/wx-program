@@ -6,6 +6,7 @@
     </view>
   </view>
   <view class="tabs_content">
+    <!-- 内容切换？ -->
     <slot></slot>
   </view>
 </view>
