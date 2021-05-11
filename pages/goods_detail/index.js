@@ -59,12 +59,13 @@ Page({
   handleCartAdd() {
     // console.log("cart");
     let cart = wx.getStorageSync("cart") || [];
-    console.log(cart);
+    // console.log(cart);
     let index = cart.findIndex(v => v.goods_id === this.GoodsInfo.goods_id);
     if (index === -1) {
       //不存在，第一次添加
       // console.log("first");
       this.GoodsInfo.num = 1;
+      this.GoodsInfo.checked = true;
       cart.push(this.GoodsInfo);
     } else {
       cart[index].num++;
