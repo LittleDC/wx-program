@@ -53,5 +53,28 @@ Page({
       urls: urls,
       current: current,
     })
+  },
+
+  //点击 加入购物车
+  handleCartAdd() {
+    // console.log("cart");
+    let cart = wx.getStorageSync("cart") || [];
+    console.log(cart);
+    let index = cart.findIndex(v => v.goods_id === this.GoodsInfo.goods_id);
+    if (index === -1) {
+      //不存在，第一次添加
+      // console.log("first");
+      this.GoodsInfo.num = 1;
+      cart.push(this.GoodsInfo);
+    } else {
+      cart[index].num++;
+    }
+    //重新添加购物车到缓存
+    wx.setStorageSync('cart', cart);
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      mask: 'true',
+    })
   }
 })
