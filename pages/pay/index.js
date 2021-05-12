@@ -67,9 +67,9 @@ Page({
       return;
     }
     // console.log("token existed");
-    const header = {
-      Authorization: token
-    };
+    // const header = {
+    //   Authorization: token
+    // };
     const order_price = this.data.totalPrice;
     const consignee_addr = this.data.address.all;
     const cart = this.data.cart;
@@ -90,7 +90,6 @@ Page({
       url: "/my/orders/create",
       method: "POST",
       data: orderParams,
-      header
     });
     console.log(res); //无效鸭，token
 
