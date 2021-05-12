@@ -3,7 +3,7 @@ let ajaxTimes = 0;
 export const request = (params) => {
   //判断url中是否有my---发送token
   let header = {
-    ...params.header
+    ...(params.header)
   };
   if (params.url.includes("/my/")) {
     header["Authorization"] = wx.getStorageSync('token');

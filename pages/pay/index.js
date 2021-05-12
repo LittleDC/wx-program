@@ -101,7 +101,7 @@ Page({
     wx.setStorageSync('cart', newCart);
 
     wx.navigateTo({
-      url: '/pages/order/index',
+      url: '/pages/order/index', //似乎有一个bug？
     })
   }
 
