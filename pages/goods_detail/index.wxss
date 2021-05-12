@@ -38,6 +38,9 @@ page {
   justify-content: center;
   border-left: 2rpx solid black;
 }
+.goods_name_row .goods_collect .icon-shoucang1 {
+  color: orangered;
+}
 .goods_info .goods_info_title {
   font-size: 30rpx;
   color: var(--themeColor);

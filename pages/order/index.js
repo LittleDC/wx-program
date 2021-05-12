@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    orders: [],
     tabs: [{
         id: 0,
         value: "全部",
