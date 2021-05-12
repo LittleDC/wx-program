@@ -1,2 +1,3 @@
 <!--pages/feedback/index.wxml-->
-<text>pages/feedback/index.wxml</text>
+<!-- 可使用内置button实现 -->
+<text>有意见？自己改</text>

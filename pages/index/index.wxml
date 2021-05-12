@@ -7,7 +7,7 @@
   <view class="index_swiper">
     <swiper autoplay indicator-dots circular>
       <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
-        <navigator>
+        <navigator url="{{item.navigator_url}}">
           <image mode="widthFix" src="{{item.image_src}}"></image>
         </navigator>
       </swiper-item>
@@ -17,12 +17,13 @@
 
   <!-- nav begin -->
   <view class="index_cate">
-    <navigator wx:for="{{catesList}}" wx:key="name">
+    <navigator wx:for="{{catesList}}" wx:key="name" url="/pages/category/index" open-type="switchTab">
       <image mode="widthFix" src="{{item.image_src}}"></image>
     </navigator>
   </view>
   <!-- nav end -->
 
+  <!-- 一些链接的跳转，就不做了，， -->
   <!-- floor begin -->
   <view class="index_floor">
     <view class="floor_group" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1" wx:key="floor_title">
@@ -30,7 +31,8 @@
         <image mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
       </view>
       <view class="floor_list">
-        <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name">
+        <navigator wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2" wx:key="name"
+          url="{{item2.navigator_url}}">
           <image mode="{{index2===0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}"></image>
         </navigator>
       </view>
