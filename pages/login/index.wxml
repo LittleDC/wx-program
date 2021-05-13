@@ -1,1 +1,2 @@
-<button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">登录</button>
+<!-- <button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">登录1</button> -->
+<button type="primary" plain bindtap="getUserProfile">登录</button>
