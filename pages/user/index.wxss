@@ -36,11 +36,14 @@ page {
   left: 50%;
   transform: translateX(-50%);
   top: 40%;
-  border: 2rpx solid greenyellow;
   color: greenyellow;
   font-size: 40rpx;
   padding: 30rpx;
-  border-radius: 10rpx;
+}
+.user_info_wrap .user_btn .btn_login {
+  width: 100%;
+  height: 100%;
+  border: 2rpx solid greenyellow;
 }
 .user_content {
   position: relative;

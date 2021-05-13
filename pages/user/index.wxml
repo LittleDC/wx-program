@@ -7,7 +7,8 @@
     </view>
   </view>
   <view wx:else class="user_btn">
-    <navigator url="/pages/login/index">登录</navigator>
+    <!-- <navigator url="/pages/login/index">登录</navigator> -->
+    <button class="btn_login" type="primary" plain bindtap="getUserProfile">登录</button>
   </view>
 </view>
 
